@@ -1,11 +1,13 @@
 sudo: false
 
-language: java
+language: node_js
 
-jdk:
-  - oraclejdk8
-  
-cache:
-  directories:
-  - $HOME/.m2
-  - $HOME/.gradle
+Node_js:
+  - 7
+
+script:
+  - npm run lint 
+  - npm run test: coveralls
+
+nofication:
+  email:false
